@@ -1,0 +1,116 @@
+/* ═══════════════════════════════════════
+   STORY SECTION
+   ═══════════════════════════════════════ */
+
+.story {
+  padding: 7rem 0;
+  background: linear-gradient(160deg, #f5f0e8 60%, #ede5d5 100%);
+}
+
+.story__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+/* Text side */
+.story__text .section-label {
+  margin-bottom: 0.7rem;
+}
+
+.story__heading {
+  margin-bottom: 1.5rem;
+}
+
+.story__heading em {
+  font-style: italic;
+  color: var(--caramel);
+}
+
+.story__body {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+  font-weight: 300;
+}
+
+.story__cta {
+  margin-top: 0.8rem;
+}
+
+/* Visual cards grid */
+.story__visuals {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.story__card {
+  background: var(--white);
+  border: 1px solid rgba(46, 26, 14, 0.08);
+  padding: 1.8rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.story__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(46, 26, 14, 0.1);
+}
+
+.story__card--large {
+  grid-column: 1 / -1;
+  background: var(--espresso);
+}
+
+.story__card--large .story__card-content p {
+  color: var(--cream);
+}
+
+.story__card--large .story__card-content small {
+  color: rgba(245, 240, 232, 0.6);
+}
+
+.story__card--accent {
+  background: var(--caramel);
+}
+
+.story__card--accent .story__card-content p {
+  color: var(--cream);
+}
+
+.story__card--accent .story__card-content small {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.story__card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.story__card-emoji {
+  font-size: 2rem;
+  margin-bottom: 0.6rem;
+}
+
+.story__card-content p {
+  font-family: var(--ff-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--espresso);
+}
+
+.story__card-content small {
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+@media (max-width: 900px) {
+  .story__inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}

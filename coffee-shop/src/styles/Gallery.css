@@ -1,0 +1,64 @@
+/* ═══════════════════════════════════════
+   GALLERY
+   ═══════════════════════════════════════ */
+
+.gallery {
+  padding: 7rem 0;
+  background: var(--cream);
+}
+
+.gallery__label {
+  margin-bottom: 0.6rem;
+}
+
+.gallery__heading {
+  margin-bottom: 3rem;
+}
+
+.gallery__heading em {
+  font-style: italic;
+  color: var(--caramel);
+}
+
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+
+.gallery__item {
+  background: var(--bg);
+  aspect-ratio: 1 / 0.85;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  padding: 2rem;
+}
+
+.gallery__item:hover {
+  transform: scale(1.03);
+  filter: brightness(1.15);
+}
+
+.gallery__emoji {
+  font-size: 3rem;
+}
+
+.gallery__item-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.85);
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .gallery__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

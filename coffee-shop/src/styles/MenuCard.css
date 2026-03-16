@@ -1,0 +1,88 @@
+/* ═══════════════════════════════════════
+   MENU CARD
+   ═══════════════════════════════════════ */
+
+.menu-card {
+  position: relative;
+  background: var(--white);
+  border: 1px solid rgba(46, 26, 14, 0.1);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: transform 0.3s var(--ease-smooth), box-shadow 0.3s var(--ease-smooth);
+}
+
+.menu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(46, 26, 14, 0.12);
+}
+
+.menu-card__icon {
+  font-size: 2.6rem;
+  line-height: 1;
+}
+
+.menu-card__tag {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: var(--gold);
+  color: var(--espresso);
+  padding: 0.2rem 0.6rem;
+}
+
+.menu-card__body {
+  flex: 1;
+}
+
+.menu-card__name {
+  font-family: var(--ff-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--espresso);
+  margin-bottom: 0.5rem;
+}
+
+.menu-card__desc {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.menu-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(46, 26, 14, 0.1);
+  padding-top: 1rem;
+}
+
+.menu-card__price {
+  font-family: var(--ff-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--brown);
+}
+
+.menu-card__btn {
+  background: none;
+  border: 1.5px solid var(--espresso);
+  color: var(--espresso);
+  font-family: var(--ff-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 0.45rem 1rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.menu-card__btn:hover {
+  background: var(--espresso);
+  color: var(--cream);
+}
