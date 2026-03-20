@@ -79,10 +79,23 @@
   width: 100%;
 }
 
-/* CTA */
+/* CTA button */
 .navbar__cta {
   font-size: 0.75rem;
   padding: 0.65rem 1.5rem;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, #c8863a, #8a5a2b);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for CTA button */
+.navbar__cta:hover {
+  background: var(--gold); /* change background on hover */
+  color: var(--dark);       /* change text color on hover */
+  box-shadow: 0 8px 20px rgba(200, 134, 58, 0.35);
 }
 
 /* Burger button */

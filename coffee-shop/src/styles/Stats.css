@@ -26,6 +26,7 @@
   border-right: none;
 }
 
+/* Animated numbers */
 .stats__number {
   font-family: var(--ff-display);
   font-size: clamp(2rem, 3.5vw, 3rem);
@@ -33,16 +34,53 @@
   color: var(--gold);
   line-height: 1;
   margin-bottom: 0.5rem;
+
+  /* fade-up + scale animation */
+  opacity: 0;
+  transform: translateY(20px) scale(0.9);
+  animation: statsFadeUp 1s forwards;
 }
 
+/* Stagger animation for each item */
+.stats__item:nth-child(1) .stats__number { animation-delay: 0.2s; }
+.stats__item:nth-child(2) .stats__number { animation-delay: 0.4s; }
+.stats__item:nth-child(3) .stats__number { animation-delay: 0.6s; }
+.stats__item:nth-child(4) .stats__number { animation-delay: 0.8s; }
+
+/* Labels */
 .stats__label {
   font-size: 0.78rem;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: rgba(245, 240, 232, 0.55);
+
+  /* optional fade animation */
+  opacity: 0;
+  transform: translateY(10px);
+  animation: labelFadeUp 0.8s forwards;
 }
 
+/* Stagger labels slightly after numbers */
+.stats__item:nth-child(1) .stats__label { animation-delay: 0.5s; }
+.stats__item:nth-child(2) .stats__label { animation-delay: 0.7s; }
+.stats__item:nth-child(3) .stats__label { animation-delay: 0.9s; }
+.stats__item:nth-child(4) .stats__label { animation-delay: 1.1s; }
+
+/* Keyframes for numbers */
+@keyframes statsFadeUp {
+  0%   { opacity: 0; transform: translateY(20px) scale(0.9); }
+  50%  { opacity: 1; transform: translateY(-5px) scale(1.05); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Keyframes for labels */
+@keyframes labelFadeUp {
+  0%   { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
 @media (max-width: 640px) {
   .stats__inner {
     grid-template-columns: repeat(2, 1fr);

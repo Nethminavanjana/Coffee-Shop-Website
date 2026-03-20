@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "../styles/Hero.css";
+import heroImg from "../images/hero2-removebg-preview.png"; // 👈 ADD THIS
 
 export default function Hero() {
   const titleRef = useRef(null);
@@ -22,41 +23,53 @@ export default function Hero() {
 
   return (
     <section id="hero" className="hero">
+
       <div className="hero__overlay" />
 
-      {/* Floating bean decorations */}
+      {/* Floating beans */}
       <div className="hero__beans" aria-hidden="true">
         {[...Array(8)].map((_, i) => (
           <span key={i} className="hero__bean" style={{ "--i": i }}>☕</span>
         ))}
       </div>
 
-      <div className="hero__content container">
-        <p className="section-label hero__label">Est. 2018 · Handcrafted Coffee</p>
+      {/* 🔥 NEW: Wrapper for layout */}
+      <div className="hero__wrapper">
 
-        <h1 className="hero__title" ref={titleRef}>
-          Every Cup Tells <br />
-          <em>a Story.</em>
-        </h1>
+        {/* LEFT SIDE - TEXT */}
+        <div className="hero__content container">
+          <p className="section-label hero__label">Est. 2018 · Handcrafted Coffee</p>
 
-        <p className="hero__sub" ref={subRef}>
-          Brewnoir is where dark roasts meet slow mornings. We source, roast, and
-          brew with obsessive care — so your first sip feels like the only thing
-          that matters right now.
-        </p>
+          <h1 className="hero__title" ref={titleRef}>
+            Every Cup Tells <br />
+            <em>a Story.</em>
+          </h1>
 
-        <div className="hero__cta-row" ref={ctaRef}>
-          <a href="#menu" className="btn-outline hero__btn">
-            Explore Menu
-          </a>
-          <a href="#story" className="hero__text-link">
-            Our Story →
-          </a>
+          <p className="hero__sub" ref={subRef}>
+            Brewnoir is where dark roasts meet slow mornings. We source, roast, and
+            brew with obsessive care — so your first sip feels like the only thing
+            that matters right now.
+          </p>
+
+          <div className="hero__cta-row" ref={ctaRef}>
+            <a href="#menu" className="btn-outline hero__btn">
+              Explore Menu
+            </a>
+            <a href="#story" className="hero__text-link">
+              Our Story →
+            </a>
+          </div>
+
+          <div className="hero__scroll-indicator" aria-hidden="true">
+            <span />
+          </div>
         </div>
 
-        <div className="hero__scroll-indicator" aria-hidden="true">
-          <span />
+        {/* RIGHT SIDE - IMAGE */}
+        <div className="hero__image">
+          <img src={heroImg} alt="coffee" />
         </div>
+
       </div>
     </section>
   );
