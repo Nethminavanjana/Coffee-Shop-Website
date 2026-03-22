@@ -47,9 +47,7 @@ const testimonials = [
   },
 ];
 
-// ── If you prefer to keep your existing data file, replace the array above
-// with: import { testimonials } from "../data/testimonialsData";
-// and add `initials` to each entry in that file.
+
 
 const AVATAR_COLORS = [
   "#b8732a", "#7a4e2d", "#a0621f",
