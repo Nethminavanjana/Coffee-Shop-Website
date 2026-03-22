@@ -8,9 +8,11 @@ export default function Story() {
 
         {/* Left: Text */}
         <div className="story__text">
-          <p className="section-label">Our Story</p>
-          <h2 className="section-heading story__heading">
-            Born from a <em>Late-Night Obsession</em>
+          <p className="story__label">Our Story</p>
+          <h2 className="story__heading">
+            Born from a
+            <br />
+            <em>Late-Night Obsession</em>
           </h2>
           <p className="story__body">
             Brewnoir started in 2018 in a 200 sq ft space with one espresso
@@ -24,44 +26,50 @@ export default function Story() {
             dials in curves by smell, the barista who respects the bean. We
             brought that entire chain to your neighborhood.
           </p>
-          <a href="#visit" className="btn-primary story__cta">
+          <a href="#visit" className="story__cta">
             Visit Us
           </a>
         </div>
 
-        {/* Right: Feature Cards */}
+        {/* Right: Photo + Cards */}
         <div className="story__visuals">
-          <div className="story__card story__card--large">
-            <div className="story__card-content">
-              <span className="story__card-emoji">🌱</span>
-              <p>Single-Origin</p>
-              <small>Sourced directly from farmers</small>
-            </div>
+
+          {/* Real photo banner */}
+          <div className="story__photo">
+            <img
+              src="https://images.pexels.com/photos/1187317/pexels-photo-1187317.jpeg?auto=compress&w=800"
+              alt="Brewnoir coffee bar"
+              loading="lazy"
+            />
+            <div className="story__photo-overlay" />
+            <span className="story__photo-badge">Est. 2018 · Brewnoir</span>
           </div>
 
-          <div className="story__card story__card--small">
-            <div className="story__card-content">
-              <span className="story__card-emoji">🔥</span>
-              <p>Small-Batch Roasted</p>
-              <small>Weekly, in-house</small>
-            </div>
+          {/* Stat cards */}
+          <div className="story__card story__card--dark">
+            <span className="story__card-icon">🌱</span>
+            <p className="story__card-title">Single-Origin</p>
+            <small className="story__card-sub">Sourced directly from farmers</small>
           </div>
 
-          <div className="story__card story__card--small story__card--accent">
-            <div className="story__card-content">
-              <span className="story__card-emoji">♻️</span>
-              <p>Sustainable</p>
-              <small>100% compostable cups</small>
-            </div>
+          <div className="story__card story__card--cream">
+            <span className="story__card-icon">🔥</span>
+            <p className="story__card-title">Small-Batch Roasted</p>
+            <small className="story__card-sub">Weekly, in-house</small>
           </div>
 
-          <div className="story__card story__card--medium">
-            <div className="story__card-content">
-              <span className="story__card-emoji">🏆</span>
-              <p>Award Winning</p>
-              <small>Best Independent Cafe 2023</small>
-            </div>
+          <div className="story__card story__card--amber">
+            <span className="story__card-icon">♻️</span>
+            <p className="story__card-title">Sustainable</p>
+            <small className="story__card-sub">100% compostable cups</small>
           </div>
+
+          <div className="story__card story__card--cream">
+            <span className="story__card-icon">🏆</span>
+            <p className="story__card-title">Award Winning</p>
+            <small className="story__card-sub">Best Independent Cafe 2023</small>
+          </div>
+
         </div>
 
       </div>

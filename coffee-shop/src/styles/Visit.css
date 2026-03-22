@@ -1,10 +1,26 @@
 /* ═══════════════════════════════════════
-   VISIT SECTION
+   VISIT SECTION — Modern Dark Redesign
    ═══════════════════════════════════════ */
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap');
+
+:root {
+  --vs-bg:        #1e110a;
+  --vs-caramel:   #b8732a;
+  --vs-cream:     #f5f0e8;
+  --vs-muted:     rgba(245, 240, 232, 0.6);
+  --vs-row-bg:    rgba(255, 255, 255, 0.05);
+  --vs-row-border:rgba(255, 255, 255, 0.07);
+  --ff-display:   'Playfair Display', Georgia, serif;
+  --ff-body:      'Outfit', system-ui, sans-serif;
+  --ease-out:     cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── Section ── */
 .visit {
   padding: 7rem 0;
-  background: #f0e8d8;
+  background: var(--vs-bg);
+  font-family: var(--ff-body);
 }
 
 .visit__inner {
@@ -14,81 +30,243 @@
   align-items: center;
 }
 
-.visit__text .section-label {
-  margin-bottom: 0.7rem;
+/* ── Left text ── */
+.visit__label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--vs-caramel);
+  margin-bottom: 1.1rem;
+}
+
+.visit__label::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--vs-caramel);
+  opacity: 0.7;
 }
 
 .visit__heading {
-  margin: 0.8rem 0 2rem;
+  font-family: var(--ff-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 400;
+  color: var(--vs-cream);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin-bottom: 2.2rem;
 }
 
 .visit__heading em {
   font-style: italic;
-  color: var(--caramel);
+  color: var(--vs-caramel);
 }
 
-/* Details list */
+/* ── Details list ── */
 .visit__details {
+  list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.6rem;
+  margin-bottom: 2.4rem;
 }
 
-.visit__details li {
+.visit__row {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  font-size: 1rem;
-  color: var(--muted);
-  font-weight: 300;
+  gap: 1rem;
+  padding: 0.95rem 1.1rem;
+  background: var(--vs-row-bg);
+  border: 1px solid var(--vs-row-border);
+  border-radius: 14px;
+  transition: background 0.25s ease, border-color 0.25s ease;
 }
 
-.visit__details li span {
-  font-size: 1.2rem;
-  flex-shrink: 0;
+.visit__row:hover {
+  background: rgba(184, 115, 42, 0.1);
+  border-color: rgba(184, 115, 42, 0.3);
 }
 
-/* Map placeholder */
-.visit__map-placeholder {
-  background: var(--espresso);
-  aspect-ratio: 4 / 3;
+/* Icon chip */
+.visit__icon-wrap {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(184, 115, 42, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  transition: opacity 0.3s ease;
+  flex-shrink: 0;
 }
 
-.visit__map-placeholder:hover {
-  opacity: 0.9;
+/* Row text */
+.visit__row-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
 }
 
-.visit__map-inner {
-  text-align: center;
-  color: var(--cream);
+.visit__row-label {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--vs-caramel);
 }
 
-.visit__map-inner span {
-  font-size: 4rem;
+.visit__row-value {
+  font-size: 0.92rem;
+  color: var(--vs-muted);
+  font-weight: 300;
+}
+
+/* CTA button */
+.visit__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--vs-caramel);
+  color: #fff;
+  font-family: var(--ff-body);
+  font-size: 0.73rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.78rem 1.8rem;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: background 0.22s ease, transform 0.18s ease;
+}
+
+.visit__cta:hover {
+  background: #a0621f;
+  transform: translateY(-2px);
+}
+
+/* ── Right: Map photo ── */
+.visit__map {
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: #2e1a0e;
+}
+
+.visit__map-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
-  margin-bottom: 1rem;
+  opacity: 0.75;
+  transition: transform 0.5s var(--ease-out), opacity 0.3s ease;
 }
 
-.visit__map-inner p {
+.visit__map:hover .visit__map-img {
+  transform: scale(1.04);
+  opacity: 0.85;
+}
+
+.visit__map-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(20, 10, 4, 0.88) 0%,
+    rgba(20, 10, 4, 0.2) 55%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+/* Glass card at bottom of map */
+.visit__map-card {
+  position: absolute;
+  bottom: 1.4rem;
+  left: 1.4rem;
+  right: 1.4rem;
+  background: rgba(20, 10, 4, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(184, 115, 42, 0.25);
+  border-radius: 16px;
+  padding: 1.1rem 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.visit__map-addr {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.visit__map-addr-label {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--vs-caramel);
+}
+
+.visit__map-addr-text {
   font-family: var(--ff-display);
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--vs-cream);
+  font-weight: 400;
 }
 
-.visit__map-inner small {
-  font-size: 0.8rem;
-  color: var(--gold);
-  letter-spacing: 0.06em;
+.visit__map-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--vs-caramel);
+  color: #fff;
+  font-family: var(--ff-body);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.52rem 1rem;
+  border-radius: 100px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s ease, transform 0.15s ease;
 }
 
-@media (max-width: 768px) {
+.visit__map-btn:hover {
+  background: #a0621f;
+  transform: scale(1.03);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
   .visit__inner {
     grid-template-columns: 1fr;
     gap: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .visit {
+    padding: 5rem 0;
+  }
+
+  .visit__map-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .visit__map-btn {
+    width: 100%;
+    justify-content: center;
   }
 }
